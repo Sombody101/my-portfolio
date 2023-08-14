@@ -124,13 +124,13 @@ function Main() {
 				${
         		    "© 2023 Evan Heyborne | " +
         		    window.location.hostname +
-        		    ".com" +
         		    (DEBUG ? " | DEBUG MODE ACTIVE" : "") + " | v" + VERSION
         		}
 			</p>
 		</div>
 	</p>
 	`;
+
     const main = document.getElementById("main");
     main.innerHTML = `
 	<div class="display-box centered">
