@@ -111,7 +111,7 @@ function Main() {
     const footer = document.getElementById("crFooter");
     footer.innerHTML = `
 	<p>
-		<div>
+		<div class="t-light">
 			<p class="footer-sub-text left">
 				Have any suggestions? Keep them to yourself.
 			</p>
@@ -120,7 +120,7 @@ function Main() {
 			</p>
 		</div>
 		<div style="display: flex; width: 100%">
-			<p style="font-size: 10px; margin: auto;">
+			<p style="font-size: 10px; margin: auto;" class="t-light">
 				${
         		    "© 2023 Evan Heyborne | " +
         		    window.location.hostname +
@@ -136,7 +136,7 @@ function Main() {
 	<div class="display-box centered">
 		${messages[Math.floor(Math.random() * messages.length)]}
 		<p>
-			But thanks for visiting anyways! 😁
+			But thanks for visiting anyway! 😁
 		</p>
 	</div>
 	`;
