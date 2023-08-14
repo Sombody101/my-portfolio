@@ -145,9 +145,11 @@ function Main() {
 
     const img = document.getElementById("me-img");
     let imgLoaded = false;
+	console.log("Waiting for image load...")
 
     img.addEventListener("load", () => {
         imgLoaded = true;
+		console.log("Image loaded");
     });
 
     // This should be the last thing to happen
@@ -157,6 +159,7 @@ function Main() {
             return;
         }
         contentLoaded = true;
+		console.log("Content loaded : Remoing overlay");
     }
     waitForImg();
 }
