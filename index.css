@@ -17,6 +17,7 @@
     --accent: rgb(0, 149, 255);
     --text-color: rgb(0, 0, 0);
     --w-text-color: rgb(255, 255, 255);
+    --b-text-color: rgb(0, 0, 0);
 
     --background-alt: rgb(0, 53, 156);
     --background-grad: linear-gradient(90deg, rgba(0, 53, 156, 1) 0%, rgba(0, 123, 255, 1) 100%);
@@ -54,6 +55,7 @@ header {
     padding: 10px;
     position: fixed;
     border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-up {
@@ -119,6 +121,10 @@ p {
 
 .t-light {
     color: var(--w-text-color);
+}
+
+.t-dark {
+    color: var(--b-text-color);
 }
 
 .pfp {
