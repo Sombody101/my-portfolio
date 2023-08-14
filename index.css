@@ -1,0 +1,219 @@
+* {
+    /* For debugging 
+    border: 1px dotted red;
+    */
+    --_: none;
+}
+
+/* Source Code Pro 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+
+:root {
+    --primary: rgb(0, 123, 255);
+    --secondary: rgb(52, 152, 219);
+    --neutral: rgb(204, 204, 204);
+    --background: rgb(232, 232, 232);
+    --accent: rgb(0, 149, 255);
+    --text-color: rgb(0, 0, 0);
+
+    --background-alt: rgb(0, 53, 156);
+    --background-grad: linear-gradient(90deg, rgba(0, 53, 156, 1) 0%, rgba(0, 123, 255, 1) 100%);
+
+    --pfp-size: 15vh;
+
+    --font-title: 'Source Code Pro', monospace;
+
+}
+
+#DARK_PREVIEW {
+    --NAN-primary-dark: rgb(0, 86, 179);
+    --NAN-secondary-dark: rgb(0, 47, 94);
+    --NAN-neutral-dark: rgb(170, 170, 170);
+    --NAN-background-dark: rgb(20, 20, 20);
+    --NAN-accent-dark: rgb(255, 215, 0);
+}
+
+header {
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--background);
+    align-items: center;
+    display: flex;
+    z-index: 100;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    border-radius: 0 0 10px 10px;
+    margin-right: 9px;
+}
+
+.nav-up {
+    transform: translateY(-100px);
+}
+
+html,
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.strt-vw-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.start-view {
+    background: var(--background-alt);
+    background: var(--background-grad);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.showcase-title {
+    color: #fff;
+}
+
+.title {
+    font-family: var(--font-title);
+    font-size: 48px;
+    font-weight: 200;
+}
+
+.sub-title {
+    font-family: var(--font-title);
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.pfp {
+    height: 145px;
+    width: 145px;
+    background-color: var(--neutral);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+}
+
+.pfp img {
+    margin-left: -3%;
+    height: auto;
+    width: 90%;
+}
+
+main {
+    margin: 10px 20%;
+    padding: 10px;
+}
+
+footer {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    padding: 10px;
+    text-align: center;
+    margin: auto 8px;
+}
+
+.centered {
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#version {
+    float: right;
+    font-size: 12px;
+}
+
+.left {
+    padding: 20px;
+}
+
+.right {
+    padding: 20px;
+    margin-left: auto;
+    /* Push the right div to the right side */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    z-index: 900;
+    transition: opacity 1s ease;
+    place-items: center;
+    display: grid;
+}
+
+/* Theme toggle button */
+.theme-toggle-div {
+    margin-right: 30px;
+}
+
+.theme-toggle-container {
+    --color: var(--theme-toggle-color);
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+}
+
+.theme-toggle-container .moon {
+    position: absolute;
+    animation: theme-toggle-keyframes-fill .5s;
+}
+
+.theme-toggle-container .sun {
+    position: absolute;
+    display: none;
+    animation: theme-toggle-keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.theme-toggle-container input:not(:checked)~.moon {
+    display: none;
+}
+
+.theme-toggle-container input:not(:checked)~.sun {
+    display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.theme-toggle-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes theme-toggle-keyframes-fill {
+    0% {
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
+}
