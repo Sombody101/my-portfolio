@@ -74,6 +74,7 @@ body {
 
 p {
     font-family: var(--font-title);
+    transition: font-size 0.3s ease;
 }
 
 .strt-vw-container {
@@ -104,19 +105,15 @@ p {
     color: var(--text-color);
     font-size: 48px;
     font-weight: 200;
-    word-wrap: break-word;
-}
-
-@media (max-width: 650px) {
-    .title {
-        font-size: 24px;
-    }
+    word-wrap:normal;
+    transition: font-size 0.3s ease;
 }
 
 .sub-title {
     font-family: var(--font-title);
     font-size: 18px;
     font-weight: 200;
+    transition: font-size 0.3s ease;
 }
 
 .t-light {
@@ -149,6 +146,25 @@ p {
     border-radius: 10px;
     font-family: var(--font-title);
     font-weight: 400;
+    transition: margin 0.5s ease;
+}
+
+@media (max-width: 650px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .sub-title {
+        font-size: 12px;
+    }
+
+    .display-box {
+        margin: 30vh 0;
+    }
+
+    p {
+        font-size: 12px;
+    }
 }
 
 main {
