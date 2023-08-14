@@ -16,6 +16,7 @@
     --background: rgb(232, 232, 232);
     --accent: rgb(0, 149, 255);
     --text-color: rgb(0, 0, 0);
+    --w-text-color: rgb(255, 255, 255);
 
     --background-alt: rgb(0, 53, 156);
     --background-grad: linear-gradient(90deg, rgba(0, 53, 156, 1) 0%, rgba(0, 123, 255, 1) 100%);
@@ -23,6 +24,14 @@
     --pfp-size: 17vh;
 
     --font-title: 'Source Code Pro', monospace;
+
+    /* "Text" based variables */
+    --T-primary: none;
+    --T-secondary: none;
+    --T-neutral: none;
+    --T-background: none;
+    --T-accent: none;
+    --T-text-color: none;
 
 }
 
@@ -61,6 +70,10 @@ body {
     grid-template-rows: auto 1fr;
 }
 
+p {
+    font-family: var(--font-title);
+}
+
 .strt-vw-container {
     margin: 0;
     display: flex;
@@ -80,12 +93,13 @@ body {
 }
 
 .showcase-title {
-    color: #fff;
+    color: var(--w-text-color);
     margin-bottom: 15px;
 }
 
 .title {
     font-family: var(--font-title);
+    color: var(--text-color);
     font-size: 48px;
     font-weight: 200;
 }
@@ -94,6 +108,10 @@ body {
     font-family: var(--font-title);
     font-size: 18px;
     font-weight: 200;
+}
+
+.t-light {
+    color: var(--w-text-color);
 }
 
 .pfp {
@@ -109,6 +127,15 @@ body {
     margin-left: -3%;
     height: auto;
     width: 90%;
+}
+
+.display-box {
+    background: rgba(var(--T-neutral), .2);
+    padding: 30px;
+    margin: 30vh 10px;
+    border-radius: 10px;
+    font-family: var(--font-title);
+    font-weight: 400;
 }
 
 main {
@@ -136,6 +163,11 @@ footer {
     font-size: 12px;
 }
 
+.footer-sub-text {
+    font-size: 14px;
+    font-family: var(--font-title);
+}
+
 .left {
     padding: 20px;
 }
@@ -143,7 +175,6 @@ footer {
 .right {
     padding: 20px;
     margin-left: auto;
-    /* Push the right div to the right side */
 }
 
 .overlay {
@@ -220,7 +251,7 @@ footer {
 
 /* Loader */
 .code-loader {
-    color: #fff;
+    color: var(--text-color);
     font-family: Consolas, Menlo, Monaco, monospace;
     font-weight: bold;
     font-size: 100px;

@@ -1,6 +1,6 @@
 /*
 'pre-runner.js' is meant for functionality that needs to occur before elements have loaded.
-Keeping theme presets here make it so people aren't being flashed by a white light and then everything going dark.
+Keeping theme presets here makes it so people aren't being flashed by a white light and then everything going dark.
 */
 
 const lightTheme = [
@@ -9,7 +9,7 @@ const lightTheme = [
     "rgb(204, 204, 204)",
     "rgb(232, 232, 232)",
     "rgb(255, 165, 0)",
-    "var(255,255,255)",
+    "rgb(0, 0, 0)",
     "rgb(0,53,156)",
     "linear-gradient(90deg, rgba(0,53,156,1) 0%, rgba(0,123,255,1) 100%)",
     "rgb(255, 255, 255)",
@@ -39,20 +39,42 @@ const rootVars = [
     "background-alt",
     "background-grad",
     "text-color-inv",
-    "theme-toggle-color"
+    "theme-toggle-color",
+];
+
+const textBasedVars = [
+    "T-primary",
+    "T-secondary",
+    "T-neutral",
+    "T-background",
+    "T-accent",
+    "T-text-color",
 ];
 
 function switchTheme(goingDark = true) {
     for (let i = 0; i < rootVars.length; i++) {
         document
             .querySelector(":root")
-            .style.setProperty("--" + rootVars[i], goingDark ? darkTheme[i] : lightTheme[i]);
+            .style.setProperty(
+                "--" + rootVars[i],
+                goingDark ? darkTheme[i] : lightTheme[i]
+            );
+    }
+    for (let i = 0; i < textBasedVars.length; i++) {
+        document
+            .querySelector(":root")
+            .style.setProperty(
+                "--" + textBasedVars[i],
+                (goingDark ? darkTheme[i] : lightTheme[i])
+                    .replace("rgb(", "")
+                    .replace(")", "")
+            );
     }
 }
 
 function manualThemeToggle() {
-    const toggle = document.getElementById("themeToggle")
-    switchTheme(toggle.checked)
+    const toggle = document.getElementById("themeToggle");
+    switchTheme(toggle.checked);
 }
 
 if (
