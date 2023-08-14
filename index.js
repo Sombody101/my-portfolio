@@ -47,7 +47,7 @@ function Main() {
 	const footer = document.getElementById("crFooter")
 	footer.innerHTML = `
 	<p>
-		${"© 2023 Evan Heyborne | " + window.location.hostname + ".com" + " | DEBUG MODE ACTIVE"}
+		${"© 2023 Evan Heyborne | " + window.location.hostname + ".com" + (DEBUG ? " | DEBUG MODE ACTIVE" : "")}
 		<p id="version">
 			${VERSION}
 		</p>
@@ -55,7 +55,22 @@ function Main() {
 	`
 
 	console.log("Current site: '" + site + "'");
-	contentLoaded = true;
+
+	const img = document.getElementById('me-img');
+	let imgLoaded = false;
+
+	img.addEventListener('load', () => {
+		imgLoaded = true;
+	});
+
+	function waitForImg() {
+		if (!imgLoaded && !DEBUG) {
+			setTimeout(waitForImg, 100);
+			return;
+		}
+		contentLoaded = true;
+	}
+	waitForImg()
 }
 
 window.onload = Main();
