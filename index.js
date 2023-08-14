@@ -112,10 +112,10 @@ function Main() {
     footer.innerHTML = `
 	<p>
 		<div class="t-light">
-			<p class="footer-sub-text left">
+			<p class="footer-sub-text left" style="padding: 0; margin-bottom: 10px;">
 				Have any suggestions? Keep them to yourself.
 			</p>
-			<p class="footer-sub-text left">
+			<p class="footer-sub-text left" style="padding: 0; margin-bottom: 30px;">
 				Not that I don't want them. There's just no way for you to tell me!
 			</p>
 		</div>
