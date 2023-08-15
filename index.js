@@ -102,6 +102,13 @@ const messages = [
 	<p>
 		- Filipe Fortes
 	</p>`,
+
+	`<h1 class="title">
+		Under development!
+	</h1>
+	<p>
+		Here's a funny quote for your trouble 
+	</p>`,
 ];
 
 function Main() {
@@ -119,24 +126,33 @@ function Main() {
 				Not that I don't want them. There's just no way for you to tell me!
 			</p>
 		</div>
+		<div class="footer-signature centered">
+			<img src="/assets/images/signature_light.webp" alt="Image of my signature">
+		</div>
 		<div style="display: flex; width: 100%">
 			<p style="font-size: 10px; margin: auto;" class="t-light">
 				${
-        		    "© 2023 Evan Heyborne | " +
-        		    window.location.hostname +
-        		    (DEBUG ? " | DEBUG MODE ACTIVE" : "") + " | v" + VERSION
-        		}
+                    "© 2023 Evan Heyborne | " +
+                    window.location.hostname +
+                    (DEBUG ? " | DEBUG MODE ACTIVE" : "") +
+                    " | v" +
+                    VERSION
+                }
 			</p>
 		</div>
 	</p>
 	`;
 
     const main = document.getElementById("main");
+	const mNum = Math.floor(Math.random() * messages.length);
     main.innerHTML = `
 	<div class="display-box centered">
-		${messages[Math.floor(Math.random() * messages.length)]}
+		${messages[mNum]}
 		<p>
 			But thanks for visiting anyway! 😁
+		</p>
+		<p class="lucky-message">
+			Lucky message No. ${mNum + 1}
 		</p>
 	</div>
 	`;
@@ -145,11 +161,11 @@ function Main() {
 
     const img = document.getElementById("me-img");
     let imgLoaded = false;
-	console.log("Waiting for image load...")
+    console.log("Waiting for image load...");
 
     img.addEventListener("load", () => {
         imgLoaded = true;
-		console.log("Image loaded");
+        console.log("Image loaded");
     });
 
     // This should be the last thing to happen
@@ -159,7 +175,7 @@ function Main() {
             return;
         }
         contentLoaded = true;
-		console.log("Content loaded : Remoing overlay");
+        console.log("Content loaded : Remoing overlay");
     }
     waitForImg();
 }
