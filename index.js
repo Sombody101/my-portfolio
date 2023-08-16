@@ -103,7 +103,7 @@ const messages = [
 		- Filipe Fortes
 	</p>`,
 
-	`<h1 class="title">
+    `<h1 class="title">
 		Under development!
 	</h1>
 	<p>
@@ -144,7 +144,7 @@ function Main() {
 	`;
 
     const main = document.getElementById("main");
-	const mNum = Math.floor(Math.random() * messages.length);
+    const mNum = Math.floor(Math.random() * messages.length);
     main.innerHTML = `
 	<div class="display-box centered">
 		${messages[mNum]}
@@ -178,6 +178,7 @@ function Main() {
         console.log("Content loaded : Remoing overlay");
     }
     waitForImg();
+	1.05
 }
 
 window.onload = Main();
