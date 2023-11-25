@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio made by Evan Heyborne. LinkedIn linkedin.com/in/evansheyborne">
     <link rel="stylesheet" href="/index.css">
-    <script src="/extras/pre-runner.js"></script>
     <title>My Portfolio</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1159/1159283.png">
 </head>
@@ -14,8 +13,8 @@
 <header id="head-menu" class="nav-up">
     <div class="theme-toggle-div right centered">
         <label class="theme-toggle-container">
-            <input id="themeToggle" checked="checked" type="checkbox" onclick="manualThemeToggle()"
-                aria-labelledby="Theme toggle" placeholder="Theme toggle">
+            <input id="themeToggle" type="checkbox" onclick="manualThemeToggle()" aria-labelledby="Theme toggle"
+                placeholder="Theme toggle">
             <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
                 <path
                     d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
@@ -28,6 +27,8 @@
             </svg>
         </label>
     </div>
+    <script src="/extras/cids.js"></script>
+    <script src="/extras/pre-runner.js"></script>
 </header>
 
 <body>
@@ -49,26 +50,22 @@
     </div>
 
     <main id="main">
-        <div class="display-box centered">
-            <h1 class="title">
-                Hello!
-            </h1>
-            <p>
-                This website is still under development.
-            </p>
-        </div>
     </main>
 
     <footer id="crFooter">
     </footer>
 
+    <!-- Removed once all assets are loaded -->
     <div id="overlayDiv" class="overlay">
         <div class="code-loader">
             <span>{</span><span>}</span>
         </div>
     </div>
 
+    <!-- Add the rest of the site -->
     <script src="/index.js"></script>
+    <!-- Get GitHub repos -->
+    <script src="/extras/github-fetch.js"></script>
 </body>
 
 </html>

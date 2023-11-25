@@ -1,16 +1,35 @@
-* {
-    /* For debugging 
-    border: 1px dotted red;
-    */
-    --_: none;
-}
-
-/* Source Code Pro 
+/* 
+    Source Code Pro 
 */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
+*,
+*::after,
+*::before {
+    /* For debugging 
+    border: 1px dotted red;
+    */
+    
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
+
+    --color-shift-time: .1s;
+    transition: background var(--color-shift-time) ease, 
+                background-color var(--color-shift-time) ease, 
+                color var(--color-shift-time) ease,
+                transform 0.3s ease-in-out;
+}
+
 :root {
-    --primary: rgb(0, 123, 255);
+    --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+    --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+    --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+    --primary: rgb(0, 105, 217);
     --secondary: rgb(52, 152, 219);
     --neutral: rgb(204, 204, 204);
     --background: rgb(232, 232, 232);
@@ -33,19 +52,43 @@
     --T-background: none;
     --T-accent: none;
     --T-text-color: none;
-
 }
 
 #DARK_PREVIEW {
-    --NAN-primary-dark: rgb(0, 86, 179);
+    --NAN-primary-dark: rgb(0, 70, 145);
     --NAN-secondary-dark: rgb(0, 47, 94);
     --NAN-neutral-dark: rgb(170, 170, 170);
     --NAN-background-dark: rgb(20, 20, 20);
     --NAN-accent-dark: rgb(255, 215, 0);
 }
 
+h1 {
+    font-size: var(--font-size-xxl);
+}
+
+h2 {
+    font-size: var(--font-size-xxl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+}
+
+h5 {
+    font-size: var(--font-size-mg);
+}
+
+p {
+    font-family: var(--font-title);
+    font-size: var(--font-size-base);
+    transition: font-size 0.3s ease;
+}
+
 header {
-    transition: transform 0.3s ease-in-out;
     background-color: var(--background);
     align-items: center;
     display: flex;
@@ -70,11 +113,6 @@ body {
     height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr;
-}
-
-p {
-    font-family: var(--font-title);
-    transition: font-size 0.3s ease;
 }
 
 .strt-vw-container {
@@ -147,6 +185,7 @@ p {
     font-family: var(--font-title);
     font-weight: 400;
     transition: margin 0.5s ease;
+    color: var(--text-color)
 }
 
 /* Doesn't need a transition (you can't even see it) */
@@ -166,10 +205,6 @@ p {
 
     .display-box {
         margin: 30vh 0;
-    }
-
-    p {
-        font-size: 12px;
     }
 
     .lucky-message {
@@ -198,7 +233,7 @@ footer {
 
 .footer-signature img {
     height: auto;
-    width: 15%;
+    width: 250px;
 }
 
 .centered {
